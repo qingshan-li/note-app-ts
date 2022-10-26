@@ -1,38 +1,148 @@
-.App {
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.out_box {
+  padding: 40px 20px;
+}
+
+.notes {
+  display: flex;
+  height: 100%;
+}
+
+.notes * {
+  font-family: sans-serif;
+}
+
+.notes__sidebar {
+  border-right: 2px solid #dddddd;
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding: 1em;
+  width: 300px;
+  display: inline-block;
+}
+
+.notes__add {
+  background: #009578;
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 0.75em 0;
+  width: 100%;
+}
+
+.notes__add:hover {
+  background: #00af8c;
+}
+
+.notes__list-item {
+  cursor: pointer;
+  border: 2px dotted;
+  margin: 2px;
+  border-radius: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.notes__list-item--selected {
+  background: #eeeeee;
+  border-radius: 7px;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.notes__small-title,
+.notes__small-updated {
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.notes__small-title {
+  font-size: 1.2em;
+}
+
+.notes__small-body {
+  padding: 0 10px;
+}
+
+.notes__small-updated {
+  color: #aaaaaa;
+  font-style: italic;
+}
+
+.notes__preview {
+  /* display: flex; */
+  /* flex-grow: 1; */
+  position: fixed;
+  padding: 20px;
+  display: inline-block;
+}
+
+.notes__title,
+.notes__body {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: #efefef;
+}
+
+.notes__title {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.notes__body {
+  flex-grow: 1;
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-top: 2em;
+  resize: none;
+}
+
+.edit_btn,
+.save_btn {
+  background: #00af8c;
+  border: none;
+  border-radius: 2px;
   color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.edit_btn:hover,
+.save_btn:hover {
+  opacity: 0.8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg {
+  background: #eee;
+}
+
+.notes_del_tip {
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 10px 15px;
+  border: 1px solid #00af8c;
+  color: #00af8c;
+  border-radius: 6px;
 }
