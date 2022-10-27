@@ -19,7 +19,7 @@ export default function NoteItem(props: any) {
 
   return (
     <div
-      className="notes__list-item"
+      className={["notes__list-item",props.selectId === props.notesItem.id?"bg":null].join(" ")}
       onClick={noteClickHandler}
       title="双击删除笔记"
     >
@@ -29,10 +29,7 @@ export default function NoteItem(props: any) {
         {props.notesItem.body.length > MAX_BODY_LENGTH ? "..." : ""}
       </div>
       <div className="notes__small-updated">
-        {props.notesItem.updated.toLocaleString(undefined, {
-          dateStyle: "full",
-          timeStyle: "short",
-        })}
+        {props.notesItem.updated}
       </div>
     </div>
   )
