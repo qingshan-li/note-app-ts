@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NoteType from "./type";
 // import reducer from "./store";
 import NoteItem from "./NoteItem"
-// import XmlButton from "./XmlButton";
+import XmlButton from "./XmlButton";
 
 
 /** all notes */
@@ -94,7 +94,7 @@ export default function NotesView() {
 
   return (
     <div className='out_box'>
-      {/* <XmlButton /> */}
+      <XmlButton noteLists={noteLists}/>
       <div className='notes__sidebar'>
         <button className='notes__add' onClick={addNewNote} type='button'>添加新的笔记 📒</button>
         <div className='notes_del_tip'>单击选中/双击删除</div>
