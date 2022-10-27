@@ -2,19 +2,22 @@ import React, { useRef } from "react";
 import NoteType from "./type";
 const xmlbuilder = require('xmlbuilder');
 const FileSaver = require('file-saver');
+// import X2JS from 'x2js';
 
 export default function XmlButton(props: any) {
   const importNotes = useRef<HTMLInputElement>(null); // upload ref
 
   /** upload file */
   const importFile = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("file", event);
+    console.log("file", event.target.files[0]);
     // const fileData = event.target.files[0];
-    // let xmlDoc = new ActiveXObject("Msxml2.DOMDocument.3.0");
 
-    // xmlDoc.async = false;
+    // let x2js = new X2JS();
+    // let document = x2js.xml2js(xml);
 
-    // xmlDoc.load(fileData.);
+    // const resultFile = fileData;
+    // let render = new FileReader();
+    // render.showDataByText(resultFile, "UTF-8");
   }
 
   /** export notes event */ 
@@ -40,7 +43,7 @@ export default function XmlButton(props: any) {
   return (
     <div className='xml_button'>
       <div className='export_btn' onClick={exportFile}>Export Notes</div>
-      <div
+      {/* <div
         className='import_btn'
         onClick={() => importNotes.current.click()}
       >Import Notes</div>
@@ -50,7 +53,7 @@ export default function XmlButton(props: any) {
         accept=".xml"
         ref={importNotes}
         onChange={importFile}
-      />
+      /> */}
     </div>
   )
 } 
